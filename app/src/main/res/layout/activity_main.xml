@@ -40,9 +40,9 @@
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:paddingBottom="100dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="" />
+            tools:listitem="@layout/view_task"/>
 
 
     </LinearLayout>
@@ -52,9 +52,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/addcolor"
+        android:backgroundTint="@color/addnav"
         android:text=""
-        android:textColor="@color/white"
+        android:id="@+id/addTaskNab"
+        android:textColor="@color/addnav"
         android:textSize="16sp"
         android:textStyle="bold"
         app:icon="@drawable/ic__baseline_add_circle_w"/>
