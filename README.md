@@ -6,5 +6,5 @@
 - Room database
 
 ### Model
-<img src="https://raw.githubusercontent.com/anvng/" alt="Figure 1. Model application development direction" 
-  style="height: 400px; width: 400px;"/>
+<img src="https://raw.githubusercontent.com/anvng/TodoList/main/app/src/main/res/mipmap-hdpi/model_app.png" alt="Figure 1. Model application development direction" 
+  style="height: 630px; width: 400px;"/>
