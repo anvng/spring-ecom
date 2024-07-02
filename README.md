@@ -5,3 +5,6 @@
 - Kotlin (MVVM model)
 - Room database
 
+### Model
+<img src="https://raw.githubusercontent.com/anvng/" alt="Figure 1. Model application development direction" 
+  style="height: 400px; width: 400px;"/>
