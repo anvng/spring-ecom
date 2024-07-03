@@ -1,4 +1,4 @@
-package com.example.todolist
+package com.example.todolist.ui
 
 import androidx.appcompat.app.AppCompatActivity
 
