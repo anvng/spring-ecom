@@ -3,8 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_todo"
-    app:startDestination="@id/addFragment">
-
+    app:startDestination="@id/taskFragment">
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.todolist.ui.task.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" >
+        <action
+            android:id="@+id/action_taskFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+        <action
+            android:id="@+id/action_taskFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.todolist.ui.add.AddFragment"
@@ -13,18 +24,6 @@
         <action
             android:id="@+id/action_addFragment_to_taskFragment"
             app:destination="@id/taskFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/taskFragment"
-        android:name="com.example.todolist.ui.task.TaskFragment"
-        android:label="fragment_task"
-        tools:layout="@layout/fragment_task" >
-        <action
-            android:id="@+id/action_taskFragment_to_addFragment"
-            app:destination="@id/addFragment" />
-        <action
-            android:id="@+id/action_taskFragment_to_updateFragment"
-            app:destination="@id/updateFragment" />
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
