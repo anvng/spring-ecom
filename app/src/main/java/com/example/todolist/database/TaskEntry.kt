@@ -12,5 +12,6 @@ data class TaskEntry(
     val id: Int = 0,
     val task: String,
     var priority: Int,
+    var note: String,
     var timestamp: Long
 ) : Parcelable

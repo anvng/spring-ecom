@@ -8,12 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import com.example.todolist.R
 import com.example.todolist.database.TaskEntry
 import com.example.todolist.databinding.FragmentAddBinding
+import com.example.todolist.viewmodel.TaskViewModel
 
 class AddFragment : Fragment() {
 
+    private val viewModel: TaskViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,24 +33,31 @@ class AddFragment : Fragment() {
         binding.apply {
             spinner.adapter = myAdapter
             btnSave.setOnClickListener {
-                if (TextUtils.isEmpty(txtEditText.text.toString())){
-                    Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_SHORT)
+                val titleStr = txtEditText.text.toString()
+                val noteStr = txtNote.text.toString()
+
+                if (TextUtils.isEmpty(titleStr) || TextUtils.isEmpty(noteStr)){
+                    Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show()
                     return@setOnClickListener
                 }
 
-                val title_str = btnSave.text.toString()
+//                val title_str = btnSave.text.toString()
                 val priority =  spinner.selectedItemPosition
                 // task entry
                 val taskEntry = TaskEntry(
                     0,
-                    title_str,
+                    titleStr,
                     priority,
+                    noteStr,
                     System.currentTimeMillis()
                 )
+
+                viewModel.insert(taskEntry)
+                Toast.makeText(requireContext(), "Success added Task", Toast.LENGTH_SHORT).show()
             }
         }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false)
+        return binding.root
     }
 }
