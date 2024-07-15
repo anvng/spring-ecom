@@ -55,7 +55,7 @@
             app:layout_constraintVertical_bias="0.263" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/txtNote"
             android:layout_width="287dp"
             android:layout_height="94dp"
             android:ems="10"
@@ -80,7 +80,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.205"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextText2"
+            app:layout_constraintTop_toBottomOf="@+id/txtNote"
             app:layout_constraintVertical_bias="0.12" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
