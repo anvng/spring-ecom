@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.todolist.R
 import com.example.todolist.database.TaskEntry
 import com.example.todolist.databinding.FragmentAddBinding
@@ -36,28 +37,37 @@ class AddFragment : Fragment() {
                 val titleStr = txtEditText.text.toString()
                 val noteStr = txtNote.text.toString()
 
-                if (TextUtils.isEmpty(titleStr) || TextUtils.isEmpty(noteStr)){
-                    Toast.makeText(requireContext(), "Please fill out all fields", Toast.LENGTH_SHORT).show()
+                if (TextUtils.isEmpty(titleStr) || TextUtils.isEmpty(noteStr)) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Please fill out all fields",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     return@setOnClickListener
                 }
 
-//                val title_str = btnSave.text.toString()
-                val priority =  spinner.selectedItemPosition
+                val priorities = spinner.selectedItemPosition
                 // task entry
                 val taskEntry = TaskEntry(
                     0,
                     titleStr,
-                    priority,
+                    priorities.toString(),
                     noteStr,
                     System.currentTimeMillis()
                 )
 
                 viewModel.insert(taskEntry)
                 Toast.makeText(requireContext(), "Success added Task", Toast.LENGTH_SHORT).show()
-            }
-        }
+                findNavController().navigate(R.id.action_addFragment_to_taskFragment)
 
-        // Inflate the layout for this fragment
-        return binding.root
+                // back button
+                btnBack.setOnClickListener {
+                    findNavController().navigate(R.id.action_addFragment_to_taskFragment)
+                }
+            }
+
+            // Inflate the layout for this fragment
+            return binding.root
+        }
     }
 }
