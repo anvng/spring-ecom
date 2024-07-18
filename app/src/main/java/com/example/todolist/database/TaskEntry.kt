@@ -10,8 +10,8 @@ import kotlinx.android.parcel.Parcelize
 data class TaskEntry(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val title: String,
+    val titles: String,
     val priority: String,
     val notes: String,
-    var timestamp: Long
+    var timestamps: Long
 ) : Parcelable

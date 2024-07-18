@@ -12,11 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        setupActionBarWithNavController(findNavController(R.id.nav_host_fragment))
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        setupActionBarWithNavController(navController)
-
-
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navHostFragment.findNavController()
 
