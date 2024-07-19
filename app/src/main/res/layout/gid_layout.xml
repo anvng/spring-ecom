@@ -8,20 +8,26 @@
             name="taskEntry"
             type="com.example.todolist.database.TaskEntry" />
 
+        <variable
+            name="clickListener"
+            type="com.example.todolist.ui.task.TaskClickListener" />
+
     </data>
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="17dp"
+        android:onClick="@{() -> clickListener.onClick(taskEntry)}"
         app:cardBackgroundColor="#FFFFFF"
-        app:cardElevation="18dp">
+        app:cardCornerRadius="17dp"
+        app:cardElevation="10dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/gid_background"
             android:layout_width="match_parent"
-            android:layout_height="137dp">
+            android:layout_height="137dp"
+            android:layout_margin="2dp">
 
             <TextView
                 android:id="@+id/vieTitle"
@@ -29,16 +35,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
+                android:text="@{taskEntry.titles}"
                 android:textSize="23sp"
                 android:textStyle="bold"
-                android:text="@{taskEntry.titles}"
-                tools:text="Title"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.132" />
+                app:layout_constraintVertical_bias="0.132"
+                tools:text="Title" />
 
             <TextView
                 android:id="@+id/viePriority"
@@ -47,14 +53,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                tools:text="Priority"
                 android:text="@{taskEntry.priority}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.463" />
+                app:layout_constraintVertical_bias="0.463"
+                tools:text="Priority" />
 
             <TextView
                 android:id="@+id/vieTimeStamp"
@@ -63,14 +69,14 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                tools:text="Time Stamp"
-                app:setTimestamp="@{taskEntry.timestamps}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.727" />
+                app:layout_constraintVertical_bias="0.727"
+                app:setTimestamp="@{taskEntry.timestamps}"
+                tools:text="Time Stamp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

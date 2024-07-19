@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.database.TaskEntry
 import com.example.todolist.databinding.GidLayoutBinding
 
-class TaskAdapter() : ListAdapter<TaskEntry, TaskAdapter.TaskViewHolder>(TaskDiffCallback) {
+class TaskAdapter(private val clickListener: TaskClickListener) : ListAdapter<TaskEntry, TaskAdapter.TaskViewHolder>(TaskDiffCallback) {
 
     companion object TaskDiffCallback :DiffUtil.ItemCallback<TaskEntry>(){
         override fun areItemsTheSame(oldItem:TaskEntry, newItem:TaskEntry) = oldItem.id == newItem.id
@@ -16,8 +16,9 @@ class TaskAdapter() : ListAdapter<TaskEntry, TaskAdapter.TaskViewHolder>(TaskDif
     }
 
     class TaskViewHolder(val binding: GidLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(taskEntry: TaskEntry){
+        fun bind(taskEntry: TaskEntry, clickListener: TaskClickListener){
             binding.taskEntry = taskEntry
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }
@@ -28,7 +29,11 @@ class TaskAdapter() : ListAdapter<TaskEntry, TaskAdapter.TaskViewHolder>(TaskDif
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         val current = getItem(position)
-        holder.bind(current)
+        holder.bind(current, clickListener)
     }
 
+}
+
+class TaskClickListener(val clickListener: (taskEntry: TaskEntry) -> Unit) {
+    fun onClick(taskEntry: TaskEntry) = clickListener(taskEntry)
 }

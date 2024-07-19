@@ -25,7 +25,8 @@ class TaskFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        adapter = TaskAdapter()
+        adapter = TaskAdapter(TaskClickListener {taskEntry ->
+            findNavController().navigate(TaskFragmentDirections.actionTaskFragmentToUpdateFragment(taskEntry))})
 
         viewModel.getAllTasks.observe(viewLifecycleOwner) {
             adapter.submitList(it)
