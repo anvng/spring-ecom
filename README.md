@@ -7,4 +7,4 @@
 
 ### Model
 <img src="https://raw.githubusercontent.com/anvng/TodoList/main/app/src/main/res/mipmap-hdpi/model_app.png" alt="Figure 1. Model application development direction" 
-  style="height: 630px; width: 400px;"/> <br> Figure 1. Model application development direction
+  style="height: 678px; width: 469px;"/> <br> Figure 1. Model application development direction
