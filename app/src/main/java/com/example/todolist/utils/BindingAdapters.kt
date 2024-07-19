@@ -8,7 +8,7 @@ import java.text.DateFormat
 
 @SuppressLint("SetTextI18n")
 @BindingAdapter("setPriorities")
-fun setPriority(view: TextView, priority: Int) {
+fun setPriorities(view: TextView, priority: Int) {
     when (priority){
         0 -> {
             view.text = "Low"
@@ -22,7 +22,6 @@ fun setPriority(view: TextView, priority: Int) {
             view.text = "High"
             view.setTextColor(Color.RED)
         }
-
     }
 }
 

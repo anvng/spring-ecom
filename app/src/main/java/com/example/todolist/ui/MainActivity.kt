@@ -21,4 +21,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
+
+    val spaceItemDecoration = SpaceItemDecoration(16)
+//    recyclerView.addItemDecoration(spaceItemDecoration)
 }
