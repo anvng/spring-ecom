@@ -39,7 +39,8 @@
             app:layout_constraintHorizontal_bias="0.447"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
+            app:layout_constraintVertical_bias="0.15"
+            tools:ignore="HardcodedText" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -58,6 +59,7 @@
             android:id="@+id/txtNote"
             android:layout_width="287dp"
             android:layout_height="94dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="Note"
             android:inputType="text"
@@ -66,7 +68,8 @@
             app:layout_constraintHorizontal_bias="0.443"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.41" />
+            app:layout_constraintVertical_bias="0.41"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/btnSave"
@@ -81,7 +84,8 @@
             app:layout_constraintHorizontal_bias="0.205"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtNote"
-            app:layout_constraintVertical_bias="0.12" />
+            app:layout_constraintVertical_bias="0.12"
+            tools:ignore="HardcodedText,SpUsage" />
 
         <Button
             android:id="@+id/btnBack"
