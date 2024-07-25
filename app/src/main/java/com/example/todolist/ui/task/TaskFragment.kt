@@ -18,6 +18,7 @@ import com.example.todolist.databinding.FragmentTaskBinding
 import com.example.todolist.viewmodel.TaskViewModel
 import com.google.android.material.snackbar.Snackbar
 
+@Suppress("DEPRECATION")
 class TaskFragment : Fragment() {
 
     private val viewModel: TaskViewModel by viewModels()
@@ -31,6 +32,7 @@ class TaskFragment : Fragment() {
         val binding = FragmentTaskBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
+        setHasOptionsMenu(true)
 
         adapter = TaskAdapter(TaskClickListener { taskEntry ->
             findNavController().navigate(

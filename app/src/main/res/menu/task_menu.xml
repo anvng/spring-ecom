@@ -4,6 +4,8 @@
 
     <item
         android:id="@+id/btnDeleteAll"
-        android:icon="@drawable/delete_all"
-        android:title="Delete all" />
+        android:icon="@drawable/delete_all_red"
+        android:title="Delete all"
+        android:orderInCategory="100"
+        app:showAsAction="always"/>
 </menu>
