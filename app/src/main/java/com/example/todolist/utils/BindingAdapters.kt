@@ -11,16 +11,16 @@ import java.text.DateFormat
 fun setPriorities(view: TextView, priority: Int) {
     when (priority){
         0 -> {
-            view.text = "Low"
-            view.setTextColor(Color.GREEN)
+            view.text = "High"
+            view.setTextColor(Color.RED)
         }
         1 -> {
             view.text = "Medium"
             view.setTextColor(Color.YELLOW)
         }
         else -> {
-            view.text = "High"
-            view.setTextColor(Color.RED)
+            view.text = "Low"
+            view.setTextColor(Color.GREEN)
         }
     }
 }
