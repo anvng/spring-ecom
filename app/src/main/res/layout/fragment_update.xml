@@ -17,7 +17,7 @@
             android:id="@+id/textUpdateView"
             android:layout_width="168dp"
             android:layout_height="40dp"
-            android:text="Update Task"
+            android:text=""
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
