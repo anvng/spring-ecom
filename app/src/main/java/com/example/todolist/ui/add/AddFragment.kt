@@ -4,12 +4,16 @@ import android.os.Bundle
 import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.example.todolist.R
 import com.example.todolist.database.TaskEntry
 import com.example.todolist.databinding.FragmentAddBinding
@@ -66,7 +70,6 @@ class AddFragment : Fragment() {
                 }
             }
 
-            // Inflate the layout for this fragment
             return binding.root
         }
     }
